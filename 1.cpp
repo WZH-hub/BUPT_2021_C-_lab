@@ -27,11 +27,11 @@ int main()
     output(array_c);
 
     delete[] array_a;
-    array_a = NULL;
+    array_a = nullptr;
     delete[] array_b;
-    array_b = NULL;
+    array_b = nullptr;
     delete[] array_c;
-    array_c = NULL;
+    array_c = nullptr;
 }
 
 void initial(int array_a[][5])
