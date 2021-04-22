@@ -28,5 +28,10 @@ public:
 
 int main()
 {
-    out_c aoc2(1, 2);
+    int x = 2, y = 2;
+    printf("++x=%d \n", ++x);
+    printf("x=%d\n",x);
+    printf("y++=%d \n", y++);
+    printf("y=%d\n",y);
+    return 0;
 }
