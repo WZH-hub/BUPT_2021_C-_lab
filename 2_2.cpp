@@ -1,3 +1,27 @@
+/*
+2.2 编写C++程序完成“矩阵”类以下功能：
+（1） 用类来实现矩阵，定义一个矩阵的类，属性包括：
+ 矩阵大小，用 lines, rows（行、列来表示）；
+ 存贮矩阵的数组指针，根据矩阵大小动态申请（new）。
+（2） 矩阵类的方法包括：
+ 构造函数，参数是矩阵大小，需要动态申请存贮矩阵的数组；
+ 析构函数，需要释放矩阵的数组指针；
+ 拷贝构造函数，需要申请和复制数组；
+ 输入，可以从 cin 中输入矩阵元素；
+ 输出，将矩阵格式化输出到 cout；
+ 矩阵相加的函数，实现两个矩阵相加的功能，结果保存在另一个矩阵类，
+但必须矩阵大小相同；
+ 矩阵相减的函数，实现两个矩阵相减的功能，结果保存在另一个矩阵类，
+但必须矩阵大小相同。
+（3） 定义三个矩阵：A1、A2、A3；
+（4） 初始化 A1、A2；2
+（5） 计算并输出 A3 = A1 加 A2，A3=A1 减 A2；（要求及提示：最好能实现对赋值
+操作符“=”的重载；注意检查“自赋值”、释放“旧元素”）
+（6） 用 new 动态创建三个矩阵类的对象：pA1、pA1、pA3；
+（7） 初始化 pA1、pA2；
+（8） 计算并输出 pA3=pA1 加 pA2，pA3=pA1 减 pA2；
+（9） 释放 pA1、pA2、pA3。
+*/
 #include <iostream>
 using namespace std;
 
@@ -41,7 +65,7 @@ public:
         return *this;
     }
 };
-
+//初始化矩阵，输入矩阵元素
 void Array::init()
 {
     cout << "请输入矩阵元素：" << endl;
@@ -54,7 +78,7 @@ void Array::init()
         }
     }
 }
-
+//输出矩阵中的元素
 void Array::output()
 {
     cout << "输出矩阵元素：" << endl;
@@ -68,11 +92,10 @@ void Array::output()
         cout << endl;
     }
 }
-
+//矩阵相加函数
 void Array::plus(Array a, Array b)
 {
     int i = 0, j = 0;
-    cout << "~~~~~~~" << endl;
     for (i = 0; i < this->lines; i++)
     {
         for (j = 0; j < this->rows; j++)
@@ -81,7 +104,7 @@ void Array::plus(Array a, Array b)
         }
     }
 }
-
+//矩阵相减函数
 void Array::sub(Array a, Array b)
 {
     int i = 0, j = 0;
@@ -93,7 +116,7 @@ void Array::sub(Array a, Array b)
         }
     }
 }
-
+//Array类的构造函数
 Array::Array()
 {
     cout << "请输入矩阵的行数和列数：" << endl;
@@ -107,7 +130,7 @@ Array::Array()
         this->array[i] = new int[rows];
     }
 }
-
+//Array类的含参构造函数
 Array::Array(int x, int y)
 {
     this->lines = x;
@@ -119,7 +142,7 @@ Array::Array(int x, int y)
         this->array[i] = new int[rows];
     }
 }
-
+//拷贝构造函数
 Array::Array(Array &a)
 {
     this->lines = a.lines;

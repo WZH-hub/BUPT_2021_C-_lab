@@ -1,3 +1,11 @@
+/*
+5.2 对Point类重载＋＋和――运算符
+ 编写C++程序完成以下功能：
+（1） Point 类的属性包括点的坐标（x，y）；
+（2） 实现 Point 类重载＋＋和――运算符：
+? ++p，--p，p++，p--；
+? ＋＋和――分别表示 x，y 增加或减少 1
+*/
 #include <iostream>
 using namespace std;
 
