@@ -129,6 +129,7 @@ Array::Array()
     {
         this->array[i] = new int[rows];
     }
+    cout << "这是Array类的构造函数" << endl;
 }
 //Array类的含参构造函数
 Array::Array(int x, int y)
@@ -141,6 +142,7 @@ Array::Array(int x, int y)
     {
         this->array[i] = new int[rows];
     }
+    cout << "这是Array类的含参构造函数" << endl;
 }
 //拷贝构造函数
 Array::Array(Array &a)
@@ -160,6 +162,7 @@ Array::Array(Array &a)
             this->array[i][j] = a.array[i][j];
         }
     }
+    cout << "这是Array类的拷贝构造函数" << endl;
 }
 
 Array::~Array()
@@ -174,6 +177,7 @@ Array::~Array()
         delete[] array;
         this->array = nullptr;
     }
+    cout << "这是Array类的析构函数" << endl;
 }
 
 int main()
@@ -202,7 +206,9 @@ int main()
     A3.sub(A1, A2);
     cout << "矩阵A3=pA1-pA2：" << endl;
     A3.output();
-
+    A1.output();
+    A2.output();
+    
     //使用new动态创建三个矩阵类的对象
     Array *pA1 = new Array(lines, rows);
     Array *pA2 = new Array(lines, rows);
